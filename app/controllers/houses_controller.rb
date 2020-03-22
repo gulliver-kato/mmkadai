@@ -15,10 +15,12 @@ class HousesController < ApplicationController
   # GET /houses/new
   def new
     @house = House.new
+    2.times{@house.routes.build}
   end
 
   # GET /houses/1/edit
   def edit
+  
   end
 
   # POST /houses
@@ -69,6 +71,6 @@ class HousesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def house_params
-      params.require(:house).permit(:name, :price, :addres, :age, :etc)
+      params.require(:house).permit(:name, :price, :addres, :age, :etc, routes_attributes: [:line, :station, :time])
     end
 end

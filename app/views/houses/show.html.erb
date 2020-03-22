@@ -1,29 +1,56 @@
+<h1>閲覧</h1>
+<br>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>物件名:</strong>
   <%= @house.name %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>賃料:</strong>
   <%= @house.price %>
 </p>
 
 <p>
-  <strong>Addres:</strong>
+  <strong>住所:</strong>
   <%= @house.addres %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>築年数:</strong>
   <%= @house.age %>
 </p>
 
 <p>
-  <strong>Etc:</strong>
+  <strong>備考:</strong>
   <%= @house.etc %>
 </p>
+
+<br>
+
+<% n = 0 %>
+<% @house.routes.each do |route|%>
+  <p>
+    <strong>最寄駅<%= n += 1 %></strong>
+  </p>
+
+  <p>
+    <strong>路線名:</strong>
+    <%= route.line %>
+  </p>
+
+  <p>
+    <strong>駅名:</strong>
+    <%= route.station %>
+  </p>
+  <p>
+    <strong>徒歩分数:</strong>
+    <%= route.time %>
+  </p>
+  <br>
+<% end %>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>
