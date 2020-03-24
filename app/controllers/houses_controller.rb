@@ -20,7 +20,13 @@ class HousesController < ApplicationController
 
   # GET /houses/1/edit
   def edit
-  
+    # @house.routes.destroy_all
+  #   if @house.routes.last.line.blank? &&
+  #     @house.routes.last.station.blank? &&
+  #     @house.routes.last.time.blank?
+  #   else
+      # @house.routes.build
+  #  end
   end
 
   # POST /houses
