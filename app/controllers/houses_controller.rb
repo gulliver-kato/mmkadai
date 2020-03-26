@@ -20,13 +20,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1/edit
   def edit
-    # @house.routes.destroy_all
-  #   if @house.routes.last.line.blank? &&
-  #     @house.routes.last.station.blank? &&
-  #     @house.routes.last.time.blank?
-  #   else
-      # @house.routes.build
-  #  end
+    @house.routes.build
   end
 
   # POST /houses
@@ -77,6 +71,6 @@ class HousesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def house_params
-      params.require(:house).permit(:name, :price, :addres, :age, :etc, routes_attributes: [:line, :station, :time])
+      params.require(:house).permit(:name, :price, :addres, :age, :etc, routes_attributes: [:line, :station, :time, :id])
     end
 end
